@@ -5,30 +5,35 @@
 # print list1
 input_ = []
 single = []
-
+#lists [[] for i in range()]
 
 fo = open("connect-4.data","r+")
 input_ = fo.readlines()
+
 for line in input_:
 	del single[:]
 	i = 0
-	while i<len(line):
+	temp = line.split(",")
+	if i == 0:
+		print temp
+		break
+	# while i<len(line):
 		
-		if line[i] == "d":
-			single.append("draw")
-			i = i+1
-			break
-		if line[i] == "w":
-			single.append("win")
-			i = i+1
-			break
-		if line[i] == "lose":
-			single.append("lose")
-			i = i+1
-			break
-		if line[i] != "," and line[i] != "\n":
-			single.append(line[i])
-		i = i+1
+	# 	if line[i] == "d":
+	# 		single.append("draw")
+	# 		i = i+1
+	# 		break
+	# 	if line[i] == "w":
+	# 		single.append("win")
+	# 		i = i+1
+	# 		break
+	# 	if line[i] == "lose":
+	# 		single.append("lose")
+	# 		i = i+1
+	# 		break
+	# 	if line[i] != "," and line[i] != "\n":
+	# 		single.append(line[i])
+	# 	i = i+1
 
 
 print single

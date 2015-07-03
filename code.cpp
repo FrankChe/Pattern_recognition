@@ -4,6 +4,9 @@
 
 using namespace std;
 
+std::vector<char> v;
+
 int main(){
 	
+
 }
