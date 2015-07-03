@@ -35,8 +35,8 @@ for line in input_:
 	# 		single.append(line[i])
 	# 	i = i+1
 
-
-print single
+		
+print (single)
 # for line in input_:
 # 	single = line
 # 	print single[1]
