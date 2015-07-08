@@ -138,8 +138,13 @@ print "partitionDiff = ",partitionDiff
 	# 		single.append(line[i])
 	# 	i = i+1
 
+<<<<<<< HEAD
 
 #print single
+=======
+		
+print (single)
+>>>>>>> origin/master
 # for line in input_:
 # 	single = line
 # 	print single[1]
