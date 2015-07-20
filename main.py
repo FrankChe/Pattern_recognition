@@ -70,3 +70,5 @@ if __name__ == '__main__' :
 	p1.disp()
 	print p1.globaldiff(dataset, label)
 	print p1.toString()
+	print label
+	#print len(dataset)
