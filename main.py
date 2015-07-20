@@ -66,16 +66,56 @@ class Pattern :
 
 
 		#Get all subsets of the set
+
 		store = []
 		new = []
-		print len(dataset[0])
-		total = 2**len(dataset[0])
+		print len(self.pattern)
+		total = 2**(len(self.pattern) - 1)
 		num = 0;
 		while num < total:
 			new = bin(num)[2:]
 			store.append(new)
 			num += 1
-		print store[10]
+		print store
+
+		store_ = [['0']*(len(self.pattern)-1)] * len(store)
+		print store_
+		for i in range(len(store)):
+			length = len(store[i])
+			
+			if length < len(store_[0]):
+				j = 0
+				dif = len(store_[0]) - length
+				while j < length:
+					store_[i][dif] = store[i][j]
+					print store_
+					print i
+					j += 1
+					dif += 1
+			else:
+				store_[i] = store[i]
+				#print i
+		print store_
+
+		
+
+		# print store[2][0]
+		# print len(self.pattern)
+		# print len(store[0])
+		# for i in range(len(store)):
+		# 	dic = self.pattern
+		# 	for j in range(len(store[i])):		
+		# 		if store[i][j] == 0:
+		# 			del dic[len(self.pattern) - 1 - j]
+		# 		flag += 1
+		# 	print dic
+		# 	#p = Pattern(dic)
+
+
+
+
+
+
 
 
 
@@ -98,7 +138,7 @@ if __name__ == '__main__' :
 	p1.disp()
 	print p1.globaldiff(dataset, label)
 	print p1.toString()
-	print p1.localdiff(dataset, label,[0,'x'])
+	p1.localdiff(dataset, label,[0,'x'])
 
 elapsed = (time.clock() - start)
 print "Time used:" ,elapsed," s"
