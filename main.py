@@ -28,6 +28,8 @@ class Pattern :
 			print 'attr'+str(k), '=', self.pattern[k]
 
 	def frequency(self, dataset) :
+		if len(dataset) == 0 :
+			return 0
 		num = 0
 		for i in range(len(dataset)) :
 			matched = 0
@@ -70,5 +72,3 @@ if __name__ == '__main__' :
 	p1.disp()
 	print p1.globaldiff(dataset, label)
 	print p1.toString()
-	print label
-	#print len(dataset)
