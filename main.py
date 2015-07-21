@@ -18,20 +18,24 @@ def importData(name) :
 
 # --- end of importData ---
 
+#Define Class Pattern
 class Pattern :
 	# attributes
 	pattern = dict()
 
 	# methods
 
+	# Initialization Function
 	def __init__(self, *arr) :
 		for p, v in arr :
 			self.pattern[p] = v
 
+	# Display the result of selected patterns
 	def disp(self) :
 		for k in self.pattern.keys() :
 			print 'attr'+str(k), '=', self.pattern[k]
 
+	# Calculate frequency of the pattern, whatever foreground or background
 	def frequency(self, dataset) :
 		if len(dataset) == 0 :
 			return 0
@@ -46,6 +50,7 @@ class Pattern :
 				num += 1
 		return 1.0*num/len(dataset)
 
+	# Define globaldiff and return global difference value 
 	def globaldiff(self, dataset, label) :
 		posi, nage = [], []
 		for i in range(len(dataset)) :
@@ -55,6 +60,7 @@ class Pattern :
 				nage.append(dataset[i])
 		return self.frequency(posi) - self.frequency(nage)
 
+	# Define localdiff and return local difference value
 	def localdiff(self, dataset, label, ptdict) :
 		posi, nage = [], []
 		for i in range(len(dataset)) :
@@ -97,19 +103,6 @@ class Pattern :
 				#print i
 		print store_
 
-		
-
-		# print store[2][0]
-		# print len(self.pattern)
-		# print len(store[0])
-		# for i in range(len(store)):
-		# 	dic = self.pattern
-		# 	for j in range(len(store[i])):		
-		# 		if store[i][j] == 0:
-		# 			del dic[len(self.pattern) - 1 - j]
-		# 		flag += 1
-		# 	print dic
-		# 	#p = Pattern(dic)
 
 
 
@@ -122,7 +115,7 @@ class Pattern :
 
 
 
-
+	# Turn the pattern into string to make us clear
 	def toString(self) :
 		s = ''
 		for i in self.pattern.keys() :
@@ -139,6 +132,7 @@ if __name__ == '__main__' :
 	print p1.globaldiff(dataset, label)
 	print p1.toString()
 	p1.localdiff(dataset, label,[0,'x'])
-
+	
+# record the time cost
 elapsed = (time.clock() - start)
 print "Time used:" ,elapsed," s"
